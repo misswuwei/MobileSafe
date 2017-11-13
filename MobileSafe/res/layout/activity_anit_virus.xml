@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        style="@style/TitleStyle"
+        android:text="手机杀毒"
+        />
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+              <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_scanner_malware"
+                />
+            <ImageView 
+                android:id="@+id/iv_scanning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/act_scanning_03"/>
+        </RelativeLayout>
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="正在扫描"
+                android:gravity="center_vertical"
+                android:id="@+id/tv_name"
+                />
+            <!-- 使用Drawable下的自定义的layer_list -->
+            <ProgressBar 
+                android:id="@+id/pb_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:background="@drawable/progress_bg"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    
+    <!-- 由于滑动框只能有一个子节点，所以需要包裹一个LinearLayout才能满足添加多个view的条件 -->
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout 
+            android:id="@+id/ll_add_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            
+        </LinearLayout>
+    </ScrollView>
+    
+
+</LinearLayout>

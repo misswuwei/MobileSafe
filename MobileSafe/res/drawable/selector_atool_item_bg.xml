@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 选中时灰色背景 -->
+    <item android:state_pressed="true" android:drawable="@android:color/darker_gray"></item>
+    
+    <!-- 在values下创建color.xml设置相应的色值 -->
+    <item android:drawable="@color/pink"></item>
+
+</selector>

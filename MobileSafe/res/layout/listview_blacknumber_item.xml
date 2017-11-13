@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp" >
+    <TextView
+        android:id="@+id/tv_phone" 
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="黑名单号码"
+        
+        />
+    
+    <TextView
+        android:id="@+id/tv_mode" 
+        android:layout_below="@+id/tv_phone"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="拦截模式"
+        />
+    
+    <ImageView 
+        android:id="@+id/iv_delete"
+        android:background="@drawable/selector_blacknumber_delete_btn_bg"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    
+
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 给进度条设置三种类型的显示方法 -->
+    <!-- 给进度条为0的时候显示的图片:背景灰色 -->
+    <item android:id="@android:id/background"  android:drawable="@drawable/security_progress_bg" />
+    <!-- 给进度条为0-100之间的时候显示的图片:背景灰色 上覆盖绿色-->
+    <item android:id="@android:id/secondaryProgress"  android:drawable="@drawable/security_progress" />
+    <!-- 给进度条为100的时候显示的图片:背景灰色 上覆盖全部绿色-->
+    <item android:id="@android:id/secondaryProgress"  android:drawable="@drawable/security_progress" />
+    
+    
+
+</layer-list>

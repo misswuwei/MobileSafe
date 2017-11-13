@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        
+        <Button 
+            android:id="@+id/bt_unlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未加锁"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:background="@drawable/tab_left_pressed"
+            />
+        <Button 
+            android:id="@+id/bt_lock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已加锁"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:background="@drawable/tab_right_default"
+            />
+        
+    </LinearLayout>
+    
+    <!-- 未加锁list布局 -->
+    <LinearLayout 
+        android:id="@+id/ll_unlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        
+        <TextView 
+            android:id="@+id/tv_unlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="未加锁应用"
+            />
+        
+        <ListView 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lv_unlock"
+            ></ListView>
+    </LinearLayout>
+    
+    <!-- 加锁list布局 -->
+    <LinearLayout 
+        android:id="@+id/ll_lock"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        
+        <TextView 
+            android:id="@+id/tv_lock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="未加锁应用"
+            />
+        
+        <ListView 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lv_lock"
+            ></ListView>
+    </LinearLayout>
+    
+
+</LinearLayout>

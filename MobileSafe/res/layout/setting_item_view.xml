@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+     <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        >
+        
+        <!-- 
+         android:layout_below="@+id/tv_title"在某个控件的下面，通过id
+         android:layout_alignParentRight="true"现对于父控件的右边
+         android:layout_centerVertical="true"竖直居中
+         
+         -->
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自动更新设置"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:id="@+id/tv_title"
+            />
+         <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:text="自动更新设置已关闭"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:id="@+id/tv_des"
+            />
+         
+         <!-- 让checkbox取消焦点的方法
+          	 android:clickable="false"
+             android:focusable="false"
+             android:focusableInTouchMode="false"
+          -->
+         <CheckBox 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/cb_box"
+             android:clickable="false"
+             android:focusable="false"
+             android:focusableInTouchMode="false"
+             android:layout_alignParentRight="true"
+             android:layout_centerVertical="true"
+             />
+         
+         <View 
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:background="#000"
+             android:layout_below="@+id/tv_des"
+             />
+    </RelativeLayout>
+    
+
+</RelativeLayout>

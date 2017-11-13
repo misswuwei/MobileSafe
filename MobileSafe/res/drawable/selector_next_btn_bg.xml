@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+         控件选择器的用法：
+    					这里只有选中和未选中，所以只有两个条目
+    -->
+
+	<!-- 当选中时执行深绿色的图片 -->
+    <item android:state_pressed="true" android:drawable="@drawable/function_greenbutton_pressed"></item>
+    
+    <!-- 默认情况下执行浅绿色的图片 -->
+    <item android:drawable="@drawable/function_greenbutton_normal"></item>
+
+</selector>

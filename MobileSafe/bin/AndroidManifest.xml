@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wuwei.mobilesafe"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- android:theme=@android:style/Theme.Light.NoTitleBar去头 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 手机震动的权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 让view挂载在窗体上的权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+     <!-- 监听向外拨打电话的权限 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+     <!-- 拦截电话需要用到的权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+     <!-- 读取系统联系人数据库需要用到的权限 -->
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+     <!-- 添删系统联系人数据库需要用到的权限 -->
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <!-- 读取短信的权限 -->
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <!-- 杀死进程的权限 -->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <!-- 创建快捷方式的权限（手动添加） -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <!-- 获取栈 -->
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <!-- 获取缓存 -->
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <!-- 清理缓存 -->
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/shortcat"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.wuwei.mobilesafe.Activity.SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.wuwei.mobilesafe.Activity.HomeActivity" >
+        	<intent-filter>
+                <action android:name="android.intent.action.Home" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.wuwei.mobilesafe.Activity.SettingActivity" />
+        <activity android:name="com.wuwei.mobilesafe.Activity.TestActivity" />
+        <activity android:name="com.wuwei.mobilesafe.Activity.SetupOverActivity" />
+        <activity android:name="com.wuwei.mobilesafe.Activity.Setup1Activity" />
+        <activity android:name="com.wuwei.mobilesafe.Activity.Setup2Activity" />
+        <activity android:name="com.wuwei.mobilesafe.Activity.Setup3Activity" />
+        <activity android:name="com.wuwei.mobilesafe.Activity.Setup4Activity" />
+        <activity android:name="com.wuwei.mobilesafe.Activity.ContectListActivity" />
+        <activity android:name="com.wuwei.mobilesafe.Activity.AToolActivity" />
+        <activity android:name="com.wuwei.mobilesafe.Activity.QueryAddressActivity" />
+        <activity
+            android:name="com.wuwei.mobilesafe.Activity.ToastLocationActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        
+        <activity android:name="com.wuwei.mobilesafe.Activity.BlackNumberActivity" />
+        <activity android:name="com.wuwei.mobilesafe.Activity.AppManagerActivity" />
+        <activity android:name="com.wuwei.mobilesafe.Activity.ProcessManagerActivity"/>
+        <activity android:name="com.wuwei.mobilesafe.Activity.ProcessSettingActivity"/>
+        <activity android:name="com.wuwei.mobilesafe.Activity.CommonNumberQueryActivity"/>
+        <activity android:name="com.wuwei.mobilesafe.Activity.AppLockActivity"/>
+        <!-- 为该Activity单独开启一个SingleInstance任务栈 -->
+        <activity android:name="com.wuwei.mobilesafe.Activity.EnterPsdActivity"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true"/><!-- 不要在任务栏中显示 -->
+        <activity android:name="com.wuwei.mobilesafe.Activity.AntiVirusActivity"/>
+        <activity android:name="com.wuwei.mobilesafe.Activity.ClearCacheActivity"/>
+        <activity android:name="com.wuwei.mobilesafe.Activity.BaseClearCacheActivity"/>
+        <activity android:name="com.wuwei.mobilesafe.Activity.SDClearCacheActivity"/>
+
+        
+        <!-- 重启手机的广播 ：android.intent.action.BOOT_COMPLETED -->
+        <receiver android:name="com.wuwei.mobilesafe.receiver.BootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 判断指定短信的逻辑 -->
+        <receiver android:name="com.wuwei.mobilesafe.receiver.SmsReceiver" >
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 设备管理器的使用 -->
+        <receiver
+            android:name="com.wuwei.mobilesafe.receiver.DeviceAdmin"
+            android:description="@string/sample_device_admin_description"
+            android:label="@string/sample_device_admin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_sample" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- 桌面小窗体广播 -->
+        <receiver android:name="com.wuwei.mobilesafe.receiver.MyAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/process_widget_provider" />
+        </receiver>
+        
+        <!-- 执行窗体小控件一键清理的广播 -->
+        <receiver android:name="com.wuwei.mobilesafe.receiver.KillProcessReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.KILL_BACKROUND_PROCESS" />
+            </intent-filter>
+        </receiver>
+        
+
+        <!-- 服务模块 -->
+        <service android:name="com.wuwei.mobilesafe.service.LocationService" />
+        <service android:name="com.wuwei.mobilesafe.service.AddressService" />
+        <service android:name="com.wuwei.mobilesafe.service.BlackNumberService" />
+        <service android:name="com.wuwei.mobilesafe.service.LockScreenService" />
+        <service android:name="com.wuwei.mobilesafe.service.UpdateWidgetService" />
+        <service android:name="com.wuwei.mobilesafe.service.AppLockService" />
+    </application>
+
+</manifest>

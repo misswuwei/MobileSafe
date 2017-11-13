@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 使用相对布局完成设置界面 -->
+   
+   <!-- <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        >
+        
+        
+         android:layout_below="@+id/tv_title"在某个控件的下面，通过id
+         android:layout_alignParentRight="true"现对于父控件的右边
+         android:layout_centerVertical="true"竖直居中
+         
+     
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自动更新设置"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:id="@+id/tv_title"
+            />
+         <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:text="自动更新设置已关闭"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:id="@+id/tv_des"
+            />
+         
+         <CheckBox 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/cb_box"
+             android:layout_alignParentRight="true"
+             android:layout_centerVertical="true"
+             />
+         
+         <View 
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:background="#000"
+             android:layout_below="@+id/tv_des"
+             />
+    </RelativeLayout>  --> 
+   
+
+    <TextView
+         style="@style/TitleStyle" 
+         android:text="设置中心"
+         />
+
+    <!-- 这时就可以调用类中封装好的view了 -->
+
+	<!-- 给自定义控件设置名空间（xmlns）以便关联在res下values下的自定义属性  -->
+    <com.wuwei.mobilesafe.view.SettingItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.wuwei.mobilesafe" 
+        android:id="@+id/siv_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesafe:destitle="自动更新设置"
+        mobilesafe:desoff="自动更新设置已关闭"
+        mobilesafe:deson="自动更新设置已开启">
+    </com.wuwei.mobilesafe.view.SettingItemView> 
+    
+    <!-- 号码归属地显示设置控件 -->
+    <com.wuwei.mobilesafe.view.SettingItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.wuwei.mobilesafe" 
+        android:id="@+id/siv_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesafe:destitle="号码归属地的显示设置"
+        mobilesafe:desoff="归属地的显示已关闭"
+        mobilesafe:deson="归属地的显示已开启">
+    </com.wuwei.mobilesafe.view.SettingItemView> 
+    
+     <!-- 号码归属地显示样式设置控件 -->
+    <com.wuwei.mobilesafe.view.SettingClickView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.wuwei.mobilesafe" 
+        android:id="@+id/scv_toast_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.wuwei.mobilesafe.view.SettingClickView>
+    
+     <!-- 号码归属地显示样式显示位置的控件 -->
+    <com.wuwei.mobilesafe.view.SettingClickView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.wuwei.mobilesafe" 
+        android:id="@+id/scv_Location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.wuwei.mobilesafe.view.SettingClickView>
+    
+     <!-- 黑名单拦截服务的控件 -->
+    <com.wuwei.mobilesafe.view.SettingItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.wuwei.mobilesafe" 
+        android:id="@+id/siv_blacknumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesafe:destitle="黑名单拦截设置"
+        mobilesafe:desoff="黑名单拦截已关闭"
+        mobilesafe:deson="黑名单拦截已开启">
+    </com.wuwei.mobilesafe.view.SettingItemView>
+    
+     <!-- 是否开启程序锁的控件 -->
+    <com.wuwei.mobilesafe.view.SettingItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.wuwei.mobilesafe" 
+        android:id="@+id/siv_applock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesafe:destitle="程序锁设置"
+        mobilesafe:desoff="程序锁已关闭"
+        mobilesafe:deson="程序锁已开启">
+    </com.wuwei.mobilesafe.view.SettingItemView>
+
+</LinearLayout>

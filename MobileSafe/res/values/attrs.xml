@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 给自定义控件Settingitemview自定义属性：
+	   参照安卓系统源码，要在res下values创建xml
+ -->
+<resources>
+    <declare-styleable name="com.wuwei.mobilesafe.view.SettingItemView">
+        
+        <attr name="destitle" format="string"/>
+        <attr name="desoff" format="string"/>
+        <attr name="deson" format="string"/>
+            
+    </declare-styleable>
+</resources>

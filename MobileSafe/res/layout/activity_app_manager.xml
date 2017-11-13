@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/TitleStyle"
+        android:text="软件管理" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/tv_memory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="内存可用："
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/tv_sd_memory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="SD卡可用："
+            android:textColor="#000" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ListView
+            android:id="@+id/lv_app_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:background="#ccc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="应用类型"
+            android:textColor="#000"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+</LinearLayout>

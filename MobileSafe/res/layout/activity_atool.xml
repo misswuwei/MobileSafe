@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:text="高级工具"
+        style="@style/TitleStyle"
+        />
+    <TextView 
+        android:id="@+id/tv_query_phone_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@android:drawable/btn_star"
+        android:text="归属地查询"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:background="@drawable/selector_atool_item_bg"
+        />
+    
+    <TextView 
+        android:id="@+id/tv_sms_backup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@android:drawable/btn_star"
+        android:text="短信备份"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:background="@drawable/selector_atool_item_bg"
+        />
+    
+    <TextView 
+        android:id="@+id/tv_commonnumber_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@android:drawable/btn_star"
+        android:text="常用号码查询"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:background="@drawable/selector_atool_item_bg"
+        />
+    
+    <TextView 
+        android:id="@+id/tv_applock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@android:drawable/btn_star"
+        android:text="程序锁"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:background="@drawable/selector_atool_item_bg"
+        />
+    
+</LinearLayout>

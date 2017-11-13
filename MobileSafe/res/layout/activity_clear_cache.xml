@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            style="@style/TitleStyle"
+            android:gravity="left"
+            android:text="缓存清理" />
+        <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="立即清理"
+            android:id="@+id/bt_clear"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+    
+    <ProgressBar 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:background="@drawable/progress_bg"
+        android:id="@+id/pb_bar"
+        />
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="正在扫描"
+        android:id="@+id/tv_scan"
+        />
+    
+     <!-- 由于滑动框只能有一个子节点，所以需要包裹一个LinearLayout才能满足添加多个view的条件 -->
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout 
+            android:id="@+id/ll_add_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

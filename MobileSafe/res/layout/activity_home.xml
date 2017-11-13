@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/home">
+    
+    <!-- android:padding="10dp" 控件内字体的上下边距
+      	android:background="#0f0" 控件的背景色
+      	android:gravity="center" 控件的字体居中
+      	
+      	将多次使用的控件属性抽取出来的方法：在res下的values下Styles.xml文件中设置样式
+      	-->
+    <TextView 
+       android:layout_width="match_parent" 
+       android:layout_height="50dp"
+      
+        android:text="功能列表"
+        android:textSize="40dp"
+       />
+    
+    <!-- android:singleLine="true"让字体不分行 
+    	 android:ellipsize="marquee"让字体有跑马灯的效果
+    	 android:focusable="true"想要字体滚动还要有获取焦点的属性
+         android:marqueeRepeatLimit="marquee_forever"让滚动重复无数次
+         android:focusableInTouchMode="true"
+                       使用自定义控件的方法也能够实现上述，使用步骤如下：
+                       1.定义一个类去继承控件
+                       2.在类中修改相应的方法
+                       3.在布局文件中通过调用继承类的包名调用(选中继承类名+点击右键+选择CopyQuaiefileName)
+    -->
+    <!--  <TextView 
+        android:text="asdasdassdassdassdasdassdasdasdasdasdasdasdad"
+        android:textColor="#000"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        /> -->
+ 	
+ 	<com.wuwei.mobilesafe.view.FocusTextView 
+ 	    android:text="公告：请尽快更新最新版本的手机卫士。以防最新嵌入在各平台客服端应用的病毒destroy，窃去用户的基本信息用于数据买卖"
+        android:textColor="#000"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+ 	    
+ 	    />
+ 	
+ 	<!-- 设置九宫格布局 
+ 		 android:numColumns="3"指定列数为3
+ 		 android:verticalSpacing="10sdp指定竖直方向的间距
+ 	-->
+ 	<GridView 
+ 	    android:id="@+id/gv_home"
+ 	    android:numColumns="3"
+ 	    android:verticalSpacing="10dp"
+ 	    android:layout_width="match_parent"
+        android:layout_height="match_parent"
+ 	    
+ 	    ></GridView>
+    
+
+</LinearLayout>
